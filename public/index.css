@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  color: #333640;
+}
+a {
+  text-decoration: none;
+}
+
+.hero {
+  background: #232221 url('image/hero-bg-stripe.svg') center;
+  color: white;
+  text-align: center;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.heading_title {
+  font-size: 60px;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 600;
+}
+.heading_blurb {
+  font-size: 32px;
+  margin-top: 12px;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.vinyl {
+  margin-top: 48px;
+  position: relative;
+  z-index: 1;
+}
+.vinyl:before {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background: tomato;
+  left: 0;
+  top: 50%;
+  margin-top: 5px;
+  z-index: -1;
+}
+.vinyl:after {
+  content: '';
+  position: absolute;
+  width: 50%;
+  height: 2px;
+  background: tomato;
+  right: 0;
+  top: 50%;
+  margin-top: 5px;
+  z-index: -1;
+}
+#disk {
+  animation: vinyl 18s linear infinite;
+}
+@keyframes vinyl {
+  0% {
+    transform: rotateZ(0deg);
+    transform-origin: center;
+  }
+  100% {
+    transform: rotateZ(-360deg);
+    transform-origin: center;
+  }
+}
+
+
+.host p {
+  width: 574px;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 48px auto 0;
+}
+
+.episodes {
+  width: 867px;
+  margin: 0 auto;
+}
+.episodes > h2 {
+  color: #FF5A26;
+  font-size: 40px;
+  margin-top: 72px;
+  margin-bottom: 60px;
+}
+
+.each-episode {
+  width: 400px;
+  margin-bottom: 60px;
+}
+
+.episode-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.each-episode_thumbnail {
+  position: relative;
+}
+
+.each-episode_about {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  color: white;
+}
+.each-episode_heading {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 32px;
+}
+.each-episode_date {
+  margin-top: 16px;
+  margin-bottom: 0;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.each-episode_desc {
+  font-size: 18px;
+  line-height: 24px;
+  color: #FF5A26;
+  margin-top: 24px;
+}
+
+.each-episode_btnListen a {
+  display: flex;
+  color: #FF5A26;
+  align-items: center;
+}
+.each-episode_btnListen a:hover {
+  opacity: 80%;
+}
+.each-episode_btnListen p {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 16px;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .episodes {
+    width: 700px;
+  }
+  .each-episode {
+    width: 300px;
+  }
+  .each-episode_thumbnail img {
+    width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .episodes {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .episode-row {
+    flex-wrap: wrap;
+  }
+  .each-episode {
+    width: 100%;
+  }
+  .each-episode_thumbnail img {
+    width: 100%;
+  }
+  .host p {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .heading_title {
+    font-size: 40px;
+  }
+  .heading_blurb {
+    font-size: 24px;
+  }
+  .episodes,
+  .host p {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .episodes > h2 {
+    font-size: 32px;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+  .vinyl svg {
+    width: 180px;
+    height: 180px;
+  }
+  .each-episode_heading {
+    font-size: 24px;
+  }
+  .each-episode {
+    margin-bottom: 48px;
+  }
+}
